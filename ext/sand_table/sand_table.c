@@ -15,6 +15,10 @@
 #define curr_thread rb_curr_thread
 #endif
 
+#if RUBY_VERSION_CODE == 187 && RUBY_PATCHLEVEL >= 0
+#define curr_thread rb_curr_thread
+#endif
+
 VALUE ruby_sandbox = Qnil;
 static sandkit real;
 static sandkit base;
