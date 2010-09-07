@@ -855,6 +855,7 @@ sandbox_run_ensure(v)
   {
     rb_raise(rb_eSandboxException, "%s: %s", path, rb_str_ptr(msg));
   }
+  return exc;
 }
 
 /*
