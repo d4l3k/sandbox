@@ -211,6 +211,22 @@ typedef struct {
     st_add_direct(kit->syserrs, NUM2INT(no), error); \
   }
 
+VALUE sandbox_swap_global(sandkit* kit, char* name, VALUE val);
+VALUE sandbox_const_find(sandkit* kit, const char* path);
+
+void sandbox_link_class(VALUE c, VALUE kitc);
+
+VALUE sandbox_bootclass(sandkit* kit, const char* name, VALUE super);
+
+VALUE sandbox_defclass_under(sandkit* kit, VALUE outer, const char* name, VALUE super);
+
+VALUE sandbox_str(sandkit* kit, const char* ptr);
+
+VALUE sandbox_defmodule_under(sandkit* kit, VALUE outer, const char* name);
+
+
+/* *** */
+
 sandwick *sandbox_method_wick(VALUE, int, VALUE *);
 sandwick *sandbox_eval_wick(VALUE);
 sandwick *sandbox_action_wick(VALUE (*)(), VALUE);
